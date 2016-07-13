@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd2cffdc-cee7-4f29-8644-0128c9ab4feb" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/test_py.iml" afterPath="$PROJECT_DIR$/.idea/test_py.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/add_group.py" afterPath="$PROJECT_DIR$/add_group.py" />
     </list>
     <ignored path="test_py.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,8 +26,8 @@
       <file leaf-file-name="add_group.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/add_group.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="29" column="40" selection-start-line="29" selection-start-column="40" selection-end-line="29" selection-end-column="40" />
+            <state relative-caret-position="180">
+              <caret line="20" column="72" selection-start-line="20" selection-start-column="72" selection-end-line="20" selection-end-column="72" />
               <folding>
                 <element signature="e#24#82#0" expanded="true" />
               </folding>
@@ -41,6 +39,13 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/add_group.py" />
+      </list>
+    </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="10" />
@@ -130,7 +135,7 @@
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
-      <option name="SDK_HOME" value="$PROJECT_DIR$/env/bin/python" />
+      <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -285,9 +290,7 @@
       <option name="params" value="" />
       <option name="USE_PARAM" value="false" />
       <option name="USE_KEYWORD" value="false" />
-      <method>
-        <option name="RunConfigurationTask" enabled="true" run_configuration_name="Unittests in add_group" run_configuration_type="tests" />
-      </method>
+      <method />
     </configuration>
     <list size="2">
       <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in add_group" />
@@ -295,8 +298,8 @@
     </list>
     <recent_temporary>
       <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in add_group" />
-        <item index="1" class="java.lang.String" itemvalue="Python tests.py.test in add_group.py" />
+        <item index="0" class="java.lang.String" itemvalue="Python tests.py.test in add_group.py" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in add_group" />
       </list>
     </recent_temporary>
   </component>
@@ -326,7 +329,16 @@
     <history-entry file="Unittests_in_add_group - 2016.07.13 at 22h 12m 21s.xml">
       <configuration name="Unittests in add_group" configurationId="tests" />
     </history-entry>
+    <history-entry file="Unittests_in_add_group - 2016.07.13 at 22h 44m 08s.xml">
+      <configuration name="Unittests in add_group" configurationId="tests" />
+    </history-entry>
     <history-entry file="py_test_in_add_group_py - 2016.07.13 at 22h 12m 34s.xml">
+      <configuration name="py.test in add_group.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="py_test_in_add_group_py - 2016.07.13 at 22h 44m 18s.xml">
+      <configuration name="py.test in add_group.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="py_test_in_add_group_py - 2016.07.13 at 22h 45m 57s.xml">
       <configuration name="py.test in add_group.py" configurationId="tests" />
     </history-entry>
   </component>
@@ -383,8 +395,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/add_group.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="29" column="40" selection-start-line="29" selection-start-column="40" selection-end-line="29" selection-end-column="40" />
+        <state relative-caret-position="180">
+          <caret line="20" column="72" selection-start-line="20" selection-start-column="72" selection-end-line="20" selection-end-column="72" />
           <folding>
             <element signature="e#24#82#0" expanded="true" />
           </folding>
