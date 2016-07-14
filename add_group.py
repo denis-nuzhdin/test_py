@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from selenium.webdriver.firefox.webdriver import WebDriver
 import unittest
+from  group import Group
 
 def is_alert_present(wd):
     try:
@@ -18,7 +19,7 @@ class add_group(unittest.TestCase):
         wd = self.wd
         self.open_site(wd)
         self.login(wd, username="admin", password="secret")
-        self.fill_group(wd, gr_name="test1", gr_header="tt1", gr_footer="tt2")
+        self.fill_group(wd, Group (gr_name="test1", gr_header="tt1", gr_footer="tt2"))
         self.submit(wd)
         self.returne_group_page(wd)
         self.logout(wd)
@@ -35,19 +36,19 @@ class add_group(unittest.TestCase):
         # submit
         wd.find_element_by_name("submit").click()
 
-    def fill_group(self, wd, gr_name, gr_header, gr_footer):
+    def fill_group(self, wd, group):
         # fill group
         wd.find_element_by_link_text("groups").click()
         wd.find_element_by_name("new").click()
         wd.find_element_by_name("group_name").click()
         wd.find_element_by_name("group_name").clear()
-        wd.find_element_by_name("group_name").send_keys("%s" % gr_name)
+        wd.find_element_by_name("group_name").send_keys(group.gr_name)
         wd.find_element_by_name("group_header").click()
         wd.find_element_by_name("group_header").clear()
-        wd.find_element_by_name("group_header").send_keys("%s" % gr_header)
+        wd.find_element_by_name("group_header").send_keys(group.gr_header)
         wd.find_element_by_name("group_footer").click()
         wd.find_element_by_name("group_footer").clear()
-        wd.find_element_by_name("group_footer").send_keys("%s" % gr_footer)
+        wd.find_element_by_name("group_footer").send_keys(group.gr_footer)
 
     def login(self, wd, username, password):
         # login
