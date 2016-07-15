@@ -16,18 +16,22 @@ class add_contact(unittest.TestCase):
     
     def test_add_contact(self):
         wd = self.wd
-        # open site
-        wd.get("http://macbook-pro-denis.local/addressbook/group.php")
-        # login
-        wd.find_element_by_name("user").click()
-        wd.find_element_by_name("user").clear()
-        wd.find_element_by_name("user").send_keys("admin")
-        wd.find_element_by_name("pass").click()
-        wd.find_element_by_name("pass").clear()
-        wd.find_element_by_name("pass").send_keys("secret")
-        wd.find_element_by_xpath("//form[@id='LoginForm']/input[3]").click()
-        # open form add contact
-        wd.find_element_by_link_text("add new").click()
+        self.open_site(wd)
+        self.login(wd)
+        self.open_form_add(wd)
+        self.fill_contact(wd)
+        self.submit(wd)
+        self.logout(wd)
+
+    def logout(self, wd):
+        # logout
+        wd.find_element_by_link_text("Logout").click()
+
+    def submit(self, wd):
+        # submit
+        wd.find_element_by_xpath("//div[@id='content']/form/input[21]").click()
+
+    def fill_contact(self, wd):
         # fill contact
         wd.find_element_by_name("firstname").click()
         wd.find_element_by_name("firstname").clear()
@@ -99,11 +103,25 @@ class add_contact(unittest.TestCase):
         wd.find_element_by_name("notes").click()
         wd.find_element_by_name("notes").clear()
         wd.find_element_by_name("notes").send_keys("my notes")
-        # submit
-        wd.find_element_by_xpath("//div[@id='content']/form/input[21]").click()
-        # logout
-        wd.find_element_by_link_text("Logout").click()
-        
+
+    def open_form_add(self, wd):
+        # open form add contact
+        wd.find_element_by_link_text("add new").click()
+
+    def login(self, wd):
+        # login
+        wd.find_element_by_name("user").click()
+        wd.find_element_by_name("user").clear()
+        wd.find_element_by_name("user").send_keys("admin")
+        wd.find_element_by_name("pass").click()
+        wd.find_element_by_name("pass").clear()
+        wd.find_element_by_name("pass").send_keys("secret")
+        wd.find_element_by_xpath("//form[@id='LoginForm']/input[3]").click()
+
+    def open_site(self, wd):
+        # open site
+        wd.get("http://macbook-pro-denis.local/addressbook/group.php")
+
     def tearDown(self):
         self.wd.quit()
 

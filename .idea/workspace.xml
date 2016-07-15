@@ -26,7 +26,7 @@
       <file leaf-file-name="add_group.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/add_group.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-215">
+            <state relative-caret-position="-665">
               <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
               <folding>
                 <element signature="e#24#82#0" expanded="true" />
@@ -38,8 +38,8 @@
       <file leaf-file-name="add_contact.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/add_contact.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="105" column="8" selection-start-line="105" selection-start-column="8" selection-end-line="105" selection-end-column="8" />
+            <state relative-caret-position="165">
+              <caret line="27" column="50" selection-start-line="27" selection-start-column="50" selection-end-line="27" selection-end-column="50" />
               <folding>
                 <element signature="e#24#82#0" expanded="true" />
               </folding>
@@ -139,7 +139,7 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyIntegratedToolsModulesConfigurable" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="Python tests.py.test in add_contact.py">
+  <component name="RunManager" selected="Python tests.py.test in add_group.py">
     <configuration default="false" name="Unittests in add_group" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -354,8 +354,8 @@
     </list>
     <recent_temporary>
       <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="Python tests.py.test in add_contact.py" />
-        <item index="1" class="java.lang.String" itemvalue="Python tests.py.test in add_group.py" />
+        <item index="0" class="java.lang.String" itemvalue="Python tests.py.test in add_group.py" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.py.test in add_contact.py" />
         <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in add_group" />
       </list>
     </recent_temporary>
@@ -374,9 +374,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_in_add_group - 2016.07.13 at 22h 12m 21s.xml">
-      <configuration name="Unittests in add_group" configurationId="tests" />
-    </history-entry>
     <history-entry file="Unittests_in_add_group - 2016.07.13 at 22h 44m 08s.xml">
       <configuration name="Unittests in add_group" configurationId="tests" />
     </history-entry>
@@ -402,6 +399,9 @@
       <configuration name="py.test in add_group.py" configurationId="tests" />
     </history-entry>
     <history-entry file="py_test_in_add_group_py - 2016.07.14 at 22h 03m 17s.xml">
+      <configuration name="py.test in add_group.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="py_test_in_add_group_py - 2016.07.15 at 21h 33m 29s.xml">
       <configuration name="py.test in add_group.py" configurationId="tests" />
     </history-entry>
   </component>
@@ -466,7 +466,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/add_group.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-215">
+        <state relative-caret-position="-665">
           <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
           <folding>
             <element signature="e#24#82#0" expanded="true" />
@@ -476,8 +476,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/add_contact.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="105" column="8" selection-start-line="105" selection-start-column="8" selection-end-line="105" selection-end-column="8" />
+        <state relative-caret-position="165">
+          <caret line="27" column="50" selection-start-line="27" selection-start-column="50" selection-end-line="27" selection-end-column="50" />
           <folding>
             <element signature="e#24#82#0" expanded="true" />
           </folding>
