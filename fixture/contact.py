@@ -1,40 +1,12 @@
-# -*- coding: utf-8 -*-
-from selenium.webdriver.firefox.webdriver import WebDriver
-import unittest
-from contact import Contact
+class ContactHelper:
 
-def is_alert_present(wd):
-    try:
-        wd.switch_to_alert().text
-        return True
-    except:
-        return False
+    def __init__(self, app):
+        self.app = app
 
-class add_contact(unittest.TestCase):
-    def setUp(self):
-        self.wd = WebDriver()
-        self.wd.implicitly_wait(60)
-    
-    def test_add_contact(self):
-        self.login()
-        self.fill_contact(Contact(c_firstname="denis2", c_middlename="2", c_lastname="nuzhdin", c_nickname="kashmir", c_title="home", c_company="myy company", c_address="my address", c_home="234", c_mobile="123-942-34-32", c_work="my work", c_fax="55-33-24", c_email="denis.nuzhdin@gmail.com", c_email2="---", c_email3="---", c_homepage="google.com", c_byear="1924", c_ayear="2311", c_address2="russia", c_phone2="439304393", c_notes="notes test"))
-        self.submit()
-        self.logout()
-
-    def logout(self):
-        # logout
-        wd = self.wd
-        wd.find_element_by_link_text("Logout").click()
-
-    def submit(self):
-        # submit
-        wd = self.wd
-        wd.find_element_by_xpath("//div[@id='content']/form/input[21]").click()
-
-    def fill_contact(self, contact):
+    def create(self, contact):
         # fill contact
-        wd = self.wd
-        self.open_form_add()
+        wd = self.app.wd
+        wd.find_element_by_link_text("add new").click()
         wd.find_element_by_name("firstname").click()
         wd.find_element_by_name("firstname").clear()
         wd.find_element_by_name("firstname").send_keys(contact.c_firstname)
@@ -105,31 +77,4 @@ class add_contact(unittest.TestCase):
         wd.find_element_by_name("notes").click()
         wd.find_element_by_name("notes").clear()
         wd.find_element_by_name("notes").send_keys(contact.c_notes)
-
-    def open_form_add(self):
-        # open form add contact
-        wd = self.wd
-        wd.find_element_by_link_text("add new").click()
-
-    def login(self):
-        # login
-        wd = self.wd
-        self.open_site()
-        wd.find_element_by_name("user").click()
-        wd.find_element_by_name("user").clear()
-        wd.find_element_by_name("user").send_keys("admin")
-        wd.find_element_by_name("pass").click()
-        wd.find_element_by_name("pass").clear()
-        wd.find_element_by_name("pass").send_keys("secret")
-        wd.find_element_by_xpath("//form[@id='LoginForm']/input[3]").click()
-
-    def open_site(self):
-        # open site
-        wd = self.wd
-        wd.get("http://macbook-pro-denis.local/addressbook/group.php")
-
-    def tearDown(self):
-        self.wd.quit()
-
-if __name__ == '__main__':
-    unittest.main()
+        wd.find_element_by_xpath("//div[@id='content']/form/input[21]").click()
