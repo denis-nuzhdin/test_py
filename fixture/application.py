@@ -8,7 +8,7 @@ class Application:
     def __init__(self):
         self.wd = WebDriver()
         self.wd.implicitly_wait(60)
-        self.session = SessionHelper (self)
+        self.session = SessionHelper(self)
         self.group = GroupHelper(self)
         self.contact = ContactHelper(self)
 
@@ -17,5 +17,5 @@ class Application:
         wd = self.wd
         wd.get("http://macbook-pro-denis.local/addressbook/index.php")
 
-    def destroy (self):
+    def destroy(self):
         self.wd.quit()
