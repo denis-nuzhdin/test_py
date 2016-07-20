@@ -17,11 +17,9 @@ class add_group(unittest.TestCase):
     
     def test_add_group(self):
         wd = self.wd
-        self.open_site(wd)
         self.login(wd, username="admin", password="secret")
         self.fill_group(wd, Group (gr_name="test1", gr_header="tt1", gr_footer="tt2"))
         self.submit(wd)
-        self.returne_group_page(wd)
         self.logout(wd)
 
     def logout(self, wd):
@@ -35,6 +33,7 @@ class add_group(unittest.TestCase):
     def submit(self, wd):
         # submit
         wd.find_element_by_name("submit").click()
+        self.returne_group_page(wd)
 
     def fill_group(self, wd, group):
         # fill group
@@ -52,6 +51,7 @@ class add_group(unittest.TestCase):
 
     def login(self, wd, username, password):
         # login
+        self.open_site(wd)
         wd.find_element_by_name("user").click()
         wd.find_element_by_name("user").clear()
         wd.find_element_by_name("user").send_keys("%s" % username)
