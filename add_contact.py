@@ -16,23 +16,25 @@ class add_contact(unittest.TestCase):
         self.wd.implicitly_wait(60)
     
     def test_add_contact(self):
-        wd = self.wd
-        self.login(wd)
-        self.fill_contact(wd, Contact(c_firstname="denis2", c_middlename="2", c_lastname="nuzhdin", c_nickname="kashmir", c_title="home", c_company="myy company", c_address="my address", c_home="234", c_mobile="123-942-34-32", c_work="my work", c_fax="55-33-24", c_email="denis.nuzhdin@gmail.com", c_email2="---", c_email3="---", c_homepage="google.com", c_byear="1924", c_ayear="2311", c_address2="russia", c_phone2="439304393", c_notes="notes test"))
-        self.submit(wd)
-        self.logout(wd)
+        self.login()
+        self.fill_contact(Contact(c_firstname="denis2", c_middlename="2", c_lastname="nuzhdin", c_nickname="kashmir", c_title="home", c_company="myy company", c_address="my address", c_home="234", c_mobile="123-942-34-32", c_work="my work", c_fax="55-33-24", c_email="denis.nuzhdin@gmail.com", c_email2="---", c_email3="---", c_homepage="google.com", c_byear="1924", c_ayear="2311", c_address2="russia", c_phone2="439304393", c_notes="notes test"))
+        self.submit()
+        self.logout()
 
-    def logout(self, wd):
+    def logout(self):
         # logout
+        wd = self.wd
         wd.find_element_by_link_text("Logout").click()
 
-    def submit(self, wd):
+    def submit(self):
         # submit
+        wd = self.wd
         wd.find_element_by_xpath("//div[@id='content']/form/input[21]").click()
 
-    def fill_contact(self, wd, contact):
+    def fill_contact(self, contact):
         # fill contact
-        self.open_form_add(wd)
+        wd = self.wd
+        self.open_form_add()
         wd.find_element_by_name("firstname").click()
         wd.find_element_by_name("firstname").clear()
         wd.find_element_by_name("firstname").send_keys(contact.c_firstname)
@@ -104,13 +106,15 @@ class add_contact(unittest.TestCase):
         wd.find_element_by_name("notes").clear()
         wd.find_element_by_name("notes").send_keys(contact.c_notes)
 
-    def open_form_add(self, wd):
+    def open_form_add(self):
         # open form add contact
+        wd = self.wd
         wd.find_element_by_link_text("add new").click()
 
-    def login(self, wd):
+    def login(self):
         # login
-        self.open_site(wd)
+        wd = self.wd
+        self.open_site()
         wd.find_element_by_name("user").click()
         wd.find_element_by_name("user").clear()
         wd.find_element_by_name("user").send_keys("admin")
@@ -119,8 +123,9 @@ class add_contact(unittest.TestCase):
         wd.find_element_by_name("pass").send_keys("secret")
         wd.find_element_by_xpath("//form[@id='LoginForm']/input[3]").click()
 
-    def open_site(self, wd):
+    def open_site(self):
         # open site
+        wd = self.wd
         wd.get("http://macbook-pro-denis.local/addressbook/group.php")
 
     def tearDown(self):

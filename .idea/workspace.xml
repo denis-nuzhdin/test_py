@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd2cffdc-cee7-4f29-8644-0128c9ab4feb" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/add_contact.py" afterPath="$PROJECT_DIR$/add_contact.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/add_group.py" afterPath="$PROJECT_DIR$/add_group.py" />
     </list>
@@ -25,23 +24,33 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="add_group.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="add_group.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/add_group.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
+            <state relative-caret-position="150">
+              <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
               <folding>
-                <element signature="e#24#82#0" expanded="true" />
+                <element signature="e#24#37#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="add_contact.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="application.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="855">
+              <caret line="57" column="22" selection-start-line="57" selection-start-column="22" selection-end-line="57" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="add_contact.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/add_contact.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
+            <state relative-caret-position="570">
+              <caret line="134" column="19" selection-start-line="134" selection-start-column="19" selection-end-line="134" selection-end-column="19" />
               <folding>
                 <element signature="e#24#82#0" expanded="true" />
               </folding>
@@ -87,8 +96,9 @@
         <option value="$PROJECT_DIR$/group.py" />
         <option value="$PROJECT_DIR$/contact.ry.py" />
         <option value="$PROJECT_DIR$/contact.py" />
-        <option value="$PROJECT_DIR$/add_group.py" />
         <option value="$PROJECT_DIR$/add_contact.py" />
+        <option value="$PROJECT_DIR$/application.py" />
+        <option value="$PROJECT_DIR$/add_group.py" />
       </list>
     </option>
   </component>
@@ -153,7 +163,7 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyIntegratedToolsModulesConfigurable" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="Python tests.py.test in add_contact.py">
+  <component name="RunManager" selected="Python tests.py.test in add_group.py">
     <configuration default="false" name="Unittests in add_group" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -368,8 +378,8 @@
     </list>
     <recent_temporary>
       <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="Python tests.py.test in add_contact.py" />
-        <item index="1" class="java.lang.String" itemvalue="Python tests.py.test in add_group.py" />
+        <item index="0" class="java.lang.String" itemvalue="Python tests.py.test in add_group.py" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.py.test in add_contact.py" />
         <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in add_group" />
       </list>
     </recent_temporary>
@@ -406,9 +416,6 @@
     <history-entry file="py_test_in_add_contact_py - 2016.07.20 at 20h 24m 51s.xml">
       <configuration name="py.test in add_contact.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="py_test_in_add_group_py - 2016.07.14 at 22h 03m 17s.xml">
-      <configuration name="py.test in add_group.py" configurationId="tests" />
-    </history-entry>
     <history-entry file="py_test_in_add_group_py - 2016.07.15 at 21h 33m 29s.xml">
       <configuration name="py.test in add_group.py" configurationId="tests" />
     </history-entry>
@@ -416,6 +423,9 @@
       <configuration name="py.test in add_group.py" configurationId="tests" />
     </history-entry>
     <history-entry file="py_test_in_add_group_py - 2016.07.20 at 20h 22m 45s.xml">
+      <configuration name="py.test in add_group.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="py_test_in_add_group_py - 2016.07.20 at 21h 05m 48s.xml">
       <configuration name="py.test in add_group.py" configurationId="tests" />
     </history-entry>
   </component>
@@ -455,7 +465,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#24#82#0" expanded="true" />
+            <element signature="e#24#37#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -465,7 +475,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#24#82#0" expanded="true" />
+            <element signature="e#24#37#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -494,22 +504,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/add_group.py">
+    <entry file="file://$PROJECT_DIR$/add_contact.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
+        <state relative-caret-position="570">
+          <caret line="134" column="19" selection-start-line="134" selection-start-column="19" selection-end-line="134" selection-end-column="19" />
           <folding>
             <element signature="e#24#82#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/add_contact.py">
+    <entry file="file://$PROJECT_DIR$/application.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
+        <state relative-caret-position="855">
+          <caret line="57" column="22" selection-start-line="57" selection-start-column="22" selection-end-line="57" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/add_group.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
           <folding>
-            <element signature="e#24#82#0" expanded="true" />
+            <element signature="e#24#37#0" expanded="true" />
           </folding>
         </state>
       </provider>
