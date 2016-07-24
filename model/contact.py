@@ -21,3 +21,5 @@ class Contact:
         self.c_address2=c_address2
         self.c_phone2=c_phone2
         self.c_notes=c_notes
+
+

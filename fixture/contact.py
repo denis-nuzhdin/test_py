@@ -1,3 +1,7 @@
+import selenium.webdriver
+import pytest
+from selenium.webdriver.common.keys import Keys
+
 class ContactHelper:
 
     def __init__(self, app):
@@ -78,3 +82,16 @@ class ContactHelper:
         wd.find_element_by_name("notes").clear()
         wd.find_element_by_name("notes").send_keys(contact.c_notes)
         wd.find_element_by_xpath("//div[@id='content']/form/input[21]").click()
+
+
+    def delete_first_contact(self):
+        wd = self.app.wd
+        # select first group
+        wd.find_element_by_name("selected[]").click()
+        # delete group
+        wd.find_element_by_xpath("//div[@id='content']/form[2]/div[2]/input").click()
+        wd.switch_to_alert().accept()
+
+
+
+
