@@ -13,18 +13,22 @@ class GroupHelper:
         # return group page
         wd.find_element_by_link_text("group page").click()
 
+    def type(self, field_name, text):
+        wd = self.app.wd
+        if text is not None:
+            wd.find_element_by_name(field_name).click()
+            wd.find_element_by_name(field_name).clear()
+            wd.find_element_by_name(field_name).send_keys(text)
+
     def fill_group(self, group):
         wd = self.app.wd
-        # fill group
-        wd.find_element_by_name("group_name").click()
-        wd.find_element_by_name("group_name").clear()
-        wd.find_element_by_name("group_name").send_keys(group.gr_name)
-        wd.find_element_by_name("group_header").click()
-        wd.find_element_by_name("group_header").clear()
-        wd.find_element_by_name("group_header").send_keys(group.gr_header)
-        wd.find_element_by_name("group_footer").click()
-        wd.find_element_by_name("group_footer").clear()
-        wd.find_element_by_name("group_footer").send_keys(group.gr_footer)
+        self.type("group_name", group.gr_name)
+        self.type("group_header", group.gr_header)
+        self.type("group_footer", group.gr_footer)
+
+    def select_first_group(self):
+        wd = self.app.wd
+        wd.find_element_by_name("selected[]").click()
 
     def create(self, group):
         wd = self.app.wd
@@ -37,16 +41,15 @@ class GroupHelper:
         wd.find_element_by_name("submit").click()
         self.returne_group_page()
 
-    def edit_first_group(self,group):
+    def edit_first_group(self,new_group_data):
         wd = self.app.wd
         # open group page
         self.open_group_page()
-        # select first group
-        wd.find_element_by_name("selected[]").click()
+        self.select_first_group()
         # open edit form
         wd.find_element_by_name("edit").click()
         # fill group
-        self.fill_group(group)
+        self.fill_group(new_group_data)
         # update group
         wd.find_element_by_name("update").click()
         # returne group page
@@ -56,8 +59,7 @@ class GroupHelper:
         wd = self.app.wd
         # open group page
         self.open_group_page()
-        # select first group
-        wd.find_element_by_name("selected[]").click()
+        self.select_first_group()
         # delete group
         wd.find_element_by_name("delete").click()
         # returne group page
