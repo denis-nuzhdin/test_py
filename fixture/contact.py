@@ -56,6 +56,11 @@ class ContactHelper:
         wd = self.app.wd
         wd.find_element_by_name("selected[]").click()
 
+    def count(self):
+        wd = self.app.wd
+        self.returne_home_page()
+        return len(wd.find_elements_by_name("selected[]"))
+
     def create(self, contact):
         wd = self.app.wd
         # open add form contact
