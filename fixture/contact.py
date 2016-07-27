@@ -68,6 +68,7 @@ class ContactHelper:
 
     def edit_first_contact(self,new_contact_data):
         wd = self.app.wd
+        self.returne_home_page()
         self.select_first_contact()
         # open edit form
         wd.find_element_by_xpath(".//*[@id='maintable']/tbody/tr[2]/td[8]/a/img").click()
@@ -80,6 +81,7 @@ class ContactHelper:
 
     def delete_first_contact(self):
         wd = self.app.wd
+        self.returne_home_page()
         self.select_first_contact()
         # delete group
         wd.find_element_by_xpath("//div[@id='content']/form[2]/div[2]/input").click()
