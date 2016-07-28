@@ -5,7 +5,8 @@ class ContactHelper:
 
     def returne_home_page(self):
         wd = self.app.wd
-        wd.find_element_by_xpath(".//*[@id='nav']/ul/li[1]/a").click()
+        if not (wd.current_url.endswith("/index.php") and len(wd.find_elements_by_xpath(".//*[@id='maintable']/tbody/tr[2]/td[8]/a/img")) > 0):
+            wd.find_element_by_xpath(".//*[@id='nav']/ul/li[1]/a").click()
 
     def type(self, field_name, text):
         wd = self.app.wd
