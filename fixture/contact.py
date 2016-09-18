@@ -1,3 +1,5 @@
+from model.contact import Contact
+
 class ContactHelper:
 
     def __init__(self, app):
@@ -16,26 +18,26 @@ class ContactHelper:
 
     def fill_contact(self, contact):
         wd = self.app.wd
-        self.type("firstname", contact.c_firstname)
-        self.type("middlename", contact.c_middlename)
-        self.type("lastname", contact.c_lastname)
-        self.type("nickname", contact.c_nickname)
-        self.type("title", contact.c_title)
-        self.type("company", contact.c_company)
-        self.type("address", contact.c_address)
-        self.type("home", contact.c_home)
-        self.type("mobile", contact.c_mobile)
-        self.type("work", contact.c_work)
-        self.type("fax", contact.c_fax)
-        self.type("email", contact.c_email)
-        self.type("email2", contact.c_email2)
-        self.type("email3", contact.c_email3)
-        self.type("homepage", contact.c_homepage)
-        self.type("byear", contact.c_byear)
-        self.type("ayear", contact.c_ayear)
-        self.type("address2", contact.c_address2)
-        self.type("phone2", contact.c_phone2)
-        self.type("notes", contact.c_notes)
+        self.type("firstname", contact.firstname)
+        self.type("middlename", contact.middlename)
+        self.type("lastname", contact.lastname)
+        self.type("nickname", contact.nickname)
+        self.type("title", contact.title)
+        self.type("company", contact.company)
+        self.type("address", contact.address)
+        self.type("home", contact.home)
+        self.type("mobile", contact.mobile)
+        self.type("work", contact.work)
+        self.type("fax", contact.fax)
+        self.type("email", contact.email)
+        self.type("email2", contact.email2)
+        self.type("email3", contact.email3)
+        self.type("homepage", contact.homepage)
+        self.type("byear", contact.byear)
+        self.type("ayear", contact.ayear)
+        self.type("address2", contact.address2)
+        self.type("phone2", contact.phone2)
+        self.type("notes", contact.notes)
 
         # # Birthday
         # if not wd.find_element_by_xpath("//div[@id='content']/form/select[1]//option[7]").is_selected():
@@ -86,11 +88,30 @@ class ContactHelper:
 
     def delete_first_contact(self):
         wd = self.app.wd
-        self.returne_home_page()
+        # self.returne_home_page()
         self.select_first_contact()
         # delete group
         wd.find_element_by_xpath("//div[@id='content']/form[2]/div[2]/input").click()
         # close alert
         wd.switch_to_alert().accept()
 
+    def get_contact_list(self):
+        wd = self.app.wd
+        self.returne_home_page()
+        contacts = []
+        for element in wd.find_elements_by_name("entry"):
+            # lastname = element.find_elements_by_css_selector("td:nth-child(2)")
+            firstname = element.find_elements_by_css_selector("td:nth-child(3)")
+            id = element.find_element_by_name("selected[]").get_attribute("value")
+            contacts.append(Contact(id=id, firstname=firstname))
+        return contacts
 
+    # def get_group_list(self):
+    #     wd = self.app.wd
+    #     self.open_group_page()
+    #     groups = []
+    #     for element in wd.find_elements_by_css_selector("span.group"):
+    #         text = element.text
+    #         id = element.find_element_by_name("selected[]").get_attribute("value")
+    #         groups.append(Group(gr_name=text,id=id))
+    #     return groups

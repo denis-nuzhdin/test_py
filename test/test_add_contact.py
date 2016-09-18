@@ -3,4 +3,20 @@ from model.contact import Contact
 
 
 def test_add_contact(app):
-    app.contact.create(Contact(c_firstname="denis2", c_middlename="2", c_lastname="nuzhdin", c_nickname="kashmir", c_title="home", c_company="myy company", c_address="my address", c_home="234", c_mobile="123-942-34-32", c_work="my work", c_fax="55-33-24", c_email="denis.nuzhdin@gmail.com", c_email2="---", c_email3="---", c_homepage="google.com", c_byear="1924", c_ayear="2311", c_address2="russia", c_phone2="439304393", c_notes="notes test"))
+    old_contacts = app.contact.get_contact_list()
+    contact = Contact(firstname="denis2", middlename="2", lastname="nuzhdin", nickname="kashmir", title="home", company="myy company", address="my address", home="234", mobile="123-942-34-32", work="my work", fax="55-33-24", email="denis.nuzhdin@gmail.com", email2="---", email3="---", homepage="google.com", byear="1924", ayear="2311", address2="russia", phone2="439304393", notes="notes test")
+    app.contact.create(contact)
+    new_contacts = app.contact.get_contact_list()
+    assert len(old_contacts) + 1  == len(new_contacts)
+    old_contacts.append (contact)
+    assert sorted(old_contacts, key = Contact.id_or_max) == sorted(new_contacts, key = Contact.id_or_max)
+
+
+# def test_add_group(app):
+#     old_groups = app.group.get_group_list()
+#     group = Group (gr_name="testttt1", gr_header="tt1", gr_footer="tt2")
+#     app.group.create(group)
+#     new_groups = app.group.get_group_list()
+#     assert len (old_groups) + 1 == len(new_groups)
+#     old_groups.append (group)
+#     assert sorted(old_groups, key = Group.id_or_max) == sorted(new_groups, key = Group.id_or_max)

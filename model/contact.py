@@ -1,23 +1,40 @@
-class Contact:
+from sys import  maxsize
 
-    def __init__(self, c_firstname=None, c_middlename=None, c_lastname=None, c_nickname=None, c_title=None, c_company=None, c_address=None, c_home=None, c_mobile=None, c_work=None, c_fax=None, c_email=None, c_email2=None, c_email3=None, c_homepage=None, c_byear=None, c_ayear=None, c_address2=None, c_phone2=None, c_notes=None):
-        self.c_firstname = c_firstname
-        self.c_middlename = c_middlename
-        self.c_lastname = c_lastname
-        self.c_nickname = c_nickname
-        self.c_title = c_title
-        self.c_company = c_company
-        self.c_address = c_address
-        self.c_home = c_home
-        self.c_mobile = c_mobile
-        self.c_work = c_work
-        self.c_fax = c_fax
-        self.c_email = c_email
-        self.c_email2 = c_email2
-        self.c_email3 = c_email3
-        self.c_homepage = c_homepage
-        self.c_byear=c_byear
-        self.c_ayear=c_ayear
-        self.c_address2=c_address2
-        self.c_phone2=c_phone2
-        self.c_notes=c_notes
+class Contact:
+    def __init__(self, firstname=None, middlename=None, lastname=None, nickname=None, title=None, company=None, address=None, home=None, mobile=None, work=None, fax=None, email=None, email2=None, email3=None, homepage=None, byear=None, ayear=None, address2=None, phone2=None, notes=None, id = None):
+        self.firstname = firstname
+        self.middlename = middlename
+        self.lastname = lastname
+        self.nickname = nickname
+        self.title = title
+        self.company = company
+        self.address = address
+        self.home = home
+        self.mobile = mobile
+        self.work = work
+        self.fax = fax
+        self.email = email
+        self.email2 = email2
+        self.email3 = email3
+        self.homepage = homepage
+        self.byear=byear
+        self.ayear=ayear
+        self.address2=address2
+        self.phone2=phone2
+        self.notes=notes
+        self.id = id
+
+    def __repr__(self):
+        return "%s:%s" % (self.id, self.firstname)
+
+    # def __eq__(self, other):
+    #     return (self.id is None or other.id is None or self.id == other.id) and self.c_lastname == other.c_lastname
+
+    def __eq__(self, other):
+        return self.id == other.id and self.firstname == other.firstname
+
+    def id_or_max(self):
+        if self.id:
+            return int(self.id)
+        else:
+            return maxsize
