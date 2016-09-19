@@ -19,25 +19,26 @@ class ContactHelper:
     def fill_contact(self, contact):
         wd = self.app.wd
         self.type("firstname", contact.firstname)
-        self.type("middlename", contact.middlename)
         self.type("lastname", contact.lastname)
-        self.type("nickname", contact.nickname)
-        self.type("title", contact.title)
-        self.type("company", contact.company)
-        self.type("address", contact.address)
-        self.type("home", contact.home)
-        self.type("mobile", contact.mobile)
-        self.type("work", contact.work)
-        self.type("fax", contact.fax)
-        self.type("email", contact.email)
-        self.type("email2", contact.email2)
-        self.type("email3", contact.email3)
-        self.type("homepage", contact.homepage)
-        self.type("byear", contact.byear)
-        self.type("ayear", contact.ayear)
-        self.type("address2", contact.address2)
-        self.type("phone2", contact.phone2)
         self.type("notes", contact.notes)
+        # self.type("middlename", contact.middlename)
+        # self.type("nickname", contact.nickname)
+        # self.type("title", contact.title)
+        # self.type("company", contact.company)
+        # self.type("address", contact.address)
+        # self.type("home", contact.home)
+        # self.type("mobile", contact.mobile)
+        # self.type("work", contact.work)
+        # self.type("fax", contact.fax)
+        # self.type("email", contact.email)
+        # self.type("email2", contact.email2)
+        # self.type("email3", contact.email3)
+        # self.type("homepage", contact.homepage)
+        # self.type("byear", contact.byear)
+        # self.type("ayear", contact.ayear)
+        # self.type("address2", contact.address2)
+        # self.type("phone2", contact.phone2)
+
 
         # # Birthday
         # if not wd.find_element_by_xpath("//div[@id='content']/form/select[1]//option[7]").is_selected():
@@ -100,9 +101,9 @@ class ContactHelper:
         self.returne_home_page()
         contacts = []
         for element in wd.find_elements_by_name("entry"):
-            # lastname = element.find_elements_by_css_selector("td:nth-child(2)")
-            firstname = element.find_elements_by_css_selector("td:nth-child(3)")
             id = element.find_element_by_name("selected[]").get_attribute("value")
+            firstname = element.find_elements_by_css_selector("td:nth-child(3)")
+            # lastname = element.find_elements_by_css_selector("td:nth-child(2)")
             contacts.append(Contact(id=id, firstname=firstname))
         return contacts
 
