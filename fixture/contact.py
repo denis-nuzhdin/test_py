@@ -102,7 +102,7 @@ class ContactHelper:
         contacts = []
         for element in wd.find_elements_by_name("entry"):
             id = element.find_element_by_name("selected[]").get_attribute("value")
-            firstname = element.find_elements_by_css_selector("td:nth-child(3)")
+            firstname = element.find_element_by_css_selector("td:nth-child(3)").text
             # lastname = element.find_elements_by_css_selector("td:nth-child(2)")
             contacts.append(Contact(id=id, firstname=firstname))
         return contacts
