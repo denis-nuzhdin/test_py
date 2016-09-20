@@ -73,6 +73,7 @@ class ContactHelper:
         # submit contact
         wd.find_element_by_name("submit").click()
         self.returne_home_page()
+        self.contact_cach = None
 
     def edit_first_contact(self,new_contact_data):
         wd = self.app.wd
@@ -86,6 +87,7 @@ class ContactHelper:
         wd.find_element_by_name("update").click()
         # return home page
         self.returne_home_page()
+        self.contact_cach = None
 
     def delete_first_contact(self):
         wd = self.app.wd
@@ -95,14 +97,29 @@ class ContactHelper:
         wd.find_element_by_xpath("//div[@id='content']/form[2]/div[2]/input").click()
         # close alert
         wd.switch_to_alert().accept()
+        self.contact_cach = None
+
+    contact_cach = None
 
     def get_contact_list(self):
-        wd = self.app.wd
-        self.returne_home_page()
-        contacts = []
-        for element in wd.find_elements_by_name("entry"):
-            id = element.find_element_by_name("selected[]").get_attribute("value")
-            firstname = element.find_element_by_css_selector("td:nth-child(3)").text
-            # lastname = element.find_elements_by_css_selector("td:nth-child(2)")
-            contacts.append(Contact(id=id, firstname=firstname))
-        return contacts
+        if self.contact_cach is None:
+            wd = self.app.wd
+            self.returne_home_page()
+            self.contact_cach = []
+            for element in wd.find_elements_by_name("entry"):
+                id = element.find_element_by_name("selected[]").get_attribute("value")
+                firstname = element.find_element_by_css_selector("td:nth-child(3)").text
+                # lastname = element.find_elements_by_css_selector("td:nth-child(2)")
+                self.contact_cach.append(Contact(id=id, firstname=firstname))
+        return list(self.contact_cach)
+
+    # def get_group_list(self):
+    #     if self.group_cach is None:
+    #         wd = self.app.wd
+    #         self.open_group_page()
+    #         self.group_cach = []
+    #         for element in wd.find_elements_by_css_selector("span.group"):
+    #             text = element.text
+    #             id = element.find_element_by_name("selected[]").get_attribute("value")
+    #             self.group_cach.append(Group(gr_name=text,id=id))
+    #     return list(self.group_cach)

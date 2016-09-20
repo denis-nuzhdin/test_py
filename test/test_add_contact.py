@@ -25,8 +25,8 @@ def test_add_contact(app):
                       # phone2="439304393"
                       )
     app.contact.create(contact)
+    assert len(old_contacts) + 1  == app.contact.count()
     new_contacts = app.contact.get_contact_list()
-    assert len(old_contacts) + 1  == len(new_contacts)
     old_contacts.append (contact)
     assert sorted(old_contacts, key = Contact.id_or_max) == sorted(new_contacts, key = Contact.id_or_max)
 
@@ -35,7 +35,7 @@ def test_add_contact(app):
 #     old_groups = app.group.get_group_list()
 #     group = Group (gr_name="testttt1", gr_header="tt1", gr_footer="tt2")
 #     app.group.create(group)
+#     assert len (old_groups) + 1 == app.group.count()
 #     new_groups = app.group.get_group_list()
-#     assert len (old_groups) + 1 == len(new_groups)
 #     old_groups.append (group)
 #     assert sorted(old_groups, key = Group.id_or_max) == sorted(new_groups, key = Group.id_or_max)
